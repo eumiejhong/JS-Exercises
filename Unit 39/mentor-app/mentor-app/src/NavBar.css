@@ -1,0 +1,23 @@
+.hidden {
+    display: none;
+}
+
+.hamburger {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 15px;
+    width: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburgerLine {
+    height: 3px;
+    background: black;
+}
+
+.hamburger:hover .hamburgerLine {
+    background: orange;
+}
