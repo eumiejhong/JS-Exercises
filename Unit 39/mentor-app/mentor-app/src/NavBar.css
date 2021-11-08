@@ -10,7 +10,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    cursor: pointer;
 }
 
 .hamburgerLine {
@@ -18,6 +17,6 @@
     background: black;
 }
 
-.hamburger:hover .hamburgerLine {
+.hamburgerLine.bold {
     background: orange;
 }

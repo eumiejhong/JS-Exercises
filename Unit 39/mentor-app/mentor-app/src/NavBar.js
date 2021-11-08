@@ -6,21 +6,18 @@ const HamburgerMenu = ({ open, toggle, hover, bold, unhover }) => {
     const className = 'hamburger' + (open ? ' open' : '');
     const hoverName = 'hamburgerLine' + (bold ? ' bold' : '')
 
-    return <div className={className} onClick={toggle} onMouseEnter={hover} onMouseLeave={unhover}>
-        <div className={hoverName}></div>
-        <div className={hoverName}></div>
-        <div className={hoverName}></div>
-    </div>
+    return (
+        <div className={className} onClick={toggle} onMouseEnter={hover} onMouseLeave={unhover}>
+            <div className={hoverName}></div>
+            <div className={hoverName}></div>
+            <div className={hoverName}></div>
+        </div>
+    )
 }
 
 
-export default function NavBar() {
-    const [isHidden, setHidden] = useState("true");
-    const [isHover, setHover] = useState("true");
-
-    const handleToggle = () => {
-        setHidden(!isHidden);
-    };
+export default function NavBar({isHidden, toggle}) {
+    const [isHover, setHover] = useState(true);
 
     const handleMouseOver = () => {
         setHover(true);
@@ -32,7 +29,7 @@ export default function NavBar() {
 
     return (
         <>
-            <HamburgerMenu toggle={handleToggle} open={!isHidden} hover={handleMouseOver} unhover={handleMouseOut} bold={isHover} />
+            <HamburgerMenu toggle={toggle} open={!isHidden} hover={handleMouseOver} unhover={handleMouseOut} bold={isHover} />
             <div className={isHidden ? "hidden" : null}>
                 <ul>
                     <li>
@@ -46,7 +43,6 @@ export default function NavBar() {
                     </li>
                 </ul>
             </div>
-
         </>
     )
 };
